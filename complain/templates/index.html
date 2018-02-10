@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<!-- list body start -->
+<div class="container main">
+  {% if user.is_authenticated %}
+    <div class="alert alert-danger">
+          Your viewing this page while you are logged in the system.
+      </div>
+    <div class="alert alert-danger">
+          You have to logout to submit or check a complain like a normal user.
+      </div>
+  {% endif %}
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th style="background-color: grey; color: white"><h3><center>Complains</center></h3></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% include 'partials/table_li_.html' %}
+    </tbody>
+  </table>
+  {% include 'partials/table_pagination.html' %}
+</div>
+<!-- list body end -->
+{% endblock %}
